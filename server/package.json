@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.3.0",
+    "nodemon": "^1.19.0",
+    "pg": "^7.11.0"
+  },
+  "scripts": {
+    "initDb": "node initDB.js",
+    "startDb": "docker rm -f healthapp ; docker container run --name healthapp -d -v healthdata:/var/lib/postgresql/data -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -p 5432:5432 postgres:alpine",
+    "start:dev": "nodemon index.js"
+  }
+}
